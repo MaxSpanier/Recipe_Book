@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.float{
+    font-size: 18px;
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+    margin-top:22px;
+}
+
+.nav-wrapper {
+    background-color: #FFF;
+}
+
+div ul li a {
+    color: black;
+}
+
+div u li {
+    margin-right: 50px;
+}
+
+.right {
+    margin-right: 150px;
+}
+
+.logo {
+    font-weight: 550;
+    color: #222 !important;
+    margin-left: 150px;
+}
+
+form {
+    margin: auto;
+    width: 75%;
+}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="{{ url_for('insert_recipe') }}" method="POST">
+    <label>Title</label>
+    <input type="text" name="title">
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
