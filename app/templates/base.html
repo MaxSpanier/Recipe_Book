@@ -7,9 +7,9 @@
     <meta name="author" content="MaxSpanier">
     <title>FlaskBook | The Recipe Book</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <!-- Compiled and minified Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 
 
 </head>
@@ -36,7 +36,9 @@
 </a>
     
     <!-- Font awesome -->
-    <script src="https://use.fontawesome.com/d46ec8e634.js"></script>
+    <script src="https://use.fontawesome.com/97b2e21a77.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>

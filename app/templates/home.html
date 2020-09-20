@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if name %}
-    <h1>{{ name }}</h1>
-{% else %}
-    <h1>Kein Name</h1>
+
+{% if entry %}
+<h1>{{ entry.title }}</h1>
+<h3>{{ entry.method }}</h3>
+<ul>
+    {% for ing in entry.ingredients %}
+    <li>
+        {{ ing }}
+    </li>
+    {% endfor %}    
+</ul>
+
 {% endif %}
 
 {% endblock %}

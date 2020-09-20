@@ -6,6 +6,18 @@ body {
     padding: 0;
 }
 
+.bordered {
+    border: 2px solid black;
+}
+
+.danger {
+    color: red;
+}
+
+.container {
+    min-width: 85%;
+}
+
 .float{
     font-size: 18px;
 	position:fixed;
@@ -49,4 +61,34 @@ div u li {
 form {
     margin: auto;
     width: 75%;
+}
+
+.add-recipe-form {
+    margin-top: 2.5rem;
+}
+
+.form-input-smaller {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.remove_field {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+.add_field_button {
+    width: 60px;
+}
+
+.fa-times-circle {
+    color: black;
+}
+
+.form_buttons {
+    margin-top: 10vh;
+}
+.btn {
+    border-radius: 25px;
 }
