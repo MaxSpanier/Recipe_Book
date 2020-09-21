@@ -1,24 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for recipe in recipes %}
-<div class="col s6 m6 l4">
-    <div class="card hoverable">
-        <div class="card-image">
-            <img src="/static/img/rice.jpeg" class="responsive-image card-img" alt="Image">
-            <span class="card-title"><strong class="strong-text"><a href="{{url_for('recipe', recipe_id=recipe._id)}}"
-                        class="card-title-text">{{recipe.title}}</a></strong></span>
-        </div>
-        <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"><strong><a href="{{url_for('recipe', recipe_id=recipe._id)}}"
-                        class="recipe-title-text">{{recipe.title}}</a></strong> <i class="material-icons right">close</i></span>
-            <p>{{recipe.description}}.</p>
-            <strong>Preparation time: </strong>{{recipe['prep-time']}} mins. <br>
-            <strong> Cooking time: </strong>{{recipe['cooking-time']}} mins. <br>
-            <strong>Serves: </strong>{{recipe.serves}} people.
-            <p><a href="{{url_for('recipe', recipe_id=recipe._id)}}">Go to recipe</a></p>
+
+<div class="wrapper">
+    {% for recipe in recipes %}
+
+    <div class="container_card bordered">
+        <div class="row margin-bottom-5vh margin-top-5vh">
+            <div class="row">
+                <div class="col s8 m4">
+                    <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://source.unsplash.com/6LXGXGNYn24/400x200" alt="{{ recipe.image }}">
+                                <span class="card-title">{{ recipe.title }}</span>
+                            </div>
+                            <div class="card-content">
+                                <p>{{ recipe.decription }}</p>
+                            </div>
+                            <div class="card-action">
+                                <small>Serves: {{ recipe.serves }}</small> <br>
+                                <small>Cooking time: {{ recipe.cooking_time }}</small> <br>
+                                <small>Prep time: {{ recipe.prep_time }}</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
+
+    {% endfor %}
 </div>
-{% endfor %}
+
 {% endblock %}

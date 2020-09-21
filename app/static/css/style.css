@@ -18,6 +18,7 @@ body {
     min-width: 85%;
 }
 
+
 .float{
     font-size: 18px;
 	position:fixed;
@@ -91,4 +92,21 @@ form {
 }
 .btn {
     border-radius: 25px;
+}
+
+.margin-top-5vh {
+    margin-top: 5vh;
+}
+
+.margin-bottom-5vh {
+    margin-bottom: 5vh;
+}
+
+a, a:hover, a:visited {
+    color: black;
+}
+
+.wrapper {
+    width: 85%;
+    margin: 0 auto;
 }

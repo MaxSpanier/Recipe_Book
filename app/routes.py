@@ -8,8 +8,7 @@ from bson.objectid import ObjectId
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    recipe = db.recipes.find_one({"title": "Brownies"})
-    return render_template("home.html", recipe=recipe)
+    return render_template("home.html")
 
 @app.route("/add_recipe", methods=['GET', 'POST'])
 def add_recipe():
