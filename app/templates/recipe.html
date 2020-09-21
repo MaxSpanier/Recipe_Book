@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if recipe %}
+<h1>{{ recipe.title }}</h1>
+<h3>{{ recipe.decription }}</h3>
+
+<ul>
+    {% for meth in recipe.method %}
+    <li>
+        {{ meth }}
+    </li>
+    {% endfor %}    
+</ul>
+
+<ol>
+    {% for ing in recipe.ingredients %}
+    <li>
+        {{ ing }}
+    </li>
+    {% endfor %}    
+</ol>
+
+<h5>{{ recipe.meal }}</h5>
+<h5>{{ recipe.serves }}</h5>
+<h5>{{ recipe.cooking_time }}</h5>
+<h5>{{ recipe.prep_time }}</h5>
+<h5>{{ recipe.image }}</h5>
+
+{% endif %}
+
+{% endblock %}

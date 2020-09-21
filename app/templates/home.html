@@ -2,17 +2,4 @@
 
 {% block content %}
 
-{% if entry %}
-<h1>{{ entry.title }}</h1>
-<h3>{{ entry.method }}</h3>
-<ul>
-    {% for ing in entry.ingredients %}
-    <li>
-        {{ ing }}
-    </li>
-    {% endfor %}    
-</ul>
-
-{% endif %}
-
 {% endblock %}
