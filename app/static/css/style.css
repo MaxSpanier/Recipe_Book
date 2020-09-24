@@ -102,11 +102,45 @@ form {
     margin-bottom: 5vh;
 }
 
-a, a:hover, a:visited {
+a, a:hover, a:visited{
     color: black;
 }
 
 .wrapper {
     width: 85%;
     margin: 0 auto;
+    text-align: center;
+}
+
+.wrapper_recipe {
+    width: 85%;
+    margin: 5vh auto;
+    text-align: center;
+}
+
+.recipe_info_container > small {
+    font-size: medium;
+    margin: 0 15px 0 0;
+    text-decoration: underline;
+}
+
+.ingredient_recipe_container {
+    width: 60%;
+    margin: 5vh auto;
+    list-style-position: inside;
+}
+
+.ingredient_inner_container {
+    width: 60%;
+    margin: 5vh auto;
+
+}
+
+.method_recipe_container {
+    width: 60%;
+    margin: auto;
+}
+
+.recipe_btn_container {
+
 }

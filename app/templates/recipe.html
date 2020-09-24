@@ -1,33 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="wrapper_recipe margin-top-5vh">
+    {% if recipe %}
+    <img src="https://source.unsplash.com/6LXGXGNYn24/1600x800" width="100%" alt="{{ recipe.image }}">
 
-{% if recipe %}
-<h1>{{ recipe.title }}</h1>
-<h3>{{ recipe.decription }}</h3>
+    <div class="recipe_wrapper bordered">
+        <h1>{{ recipe.title }}</h1>
 
-<ul>
-    {% for meth in recipe.method %}
-    <li>
-        {{ meth }}
-    </li>
-    {% endfor %}    
-</ul>
+        <div class="recipe_info_container">
+            <small>Meal: {{ recipe.meal }}</small>
+            <small>Serves: {{ recipe.serves }}</small>
+            <small>Cooking time: {{ recipe.cooking_time }}</small>
+            <small>Prep time: {{ recipe.prep_time }}</small>
+        </div>
+        
 
-<ol>
-    {% for ing in recipe.ingredients %}
-    <li>
-        {{ ing }}
-    </li>
-    {% endfor %}    
-</ol>
+        <h4>{{ recipe.decription }}</h4>
 
-<h5>{{ recipe.meal }}</h5>
-<h5>{{ recipe.serves }}</h5>
-<h5>{{ recipe.cooking_time }}</h5>
-<h5>{{ recipe.prep_time }}</h5>
-<h5>{{ recipe.image }}</h5>
+        <ul class="method_recipe_container">
+            {% for meth in recipe.method %}
+            <li>
+                {{ meth }}
+            </li>
+            {% endfor %}    
+        </ul>
 
-{% endif %}
+        <ol class="ingredient_recipe_container">
+            <div class="ingredient_inner_container">
+                {% for ing in recipe.ingredients %}
+                <li class="bordered">
+                    {{ ing }}
+                </li>
+                {% endfor %} 
+            </div>   
+        </ol>
+
+        <div class="recipe_btn_container">
+            <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="hvr-grow waves-effect waves-light btn btn_small blue tooltipped float-right"
+            data-position="bottom" data-tooltip="Edit"><i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+            <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="hvr-grow waves-effect waves-light btn btn_small red tooltipped"
+                data-position="bottom" data-tooltip="Delete"><i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
 
 {% endblock %}

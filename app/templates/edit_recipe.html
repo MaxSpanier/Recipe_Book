@@ -4,35 +4,33 @@
 
 <div class="container form-container">
     <div class="row margin-bottom-5vh">
-        <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s10 offset-s1 l8 offset-l2 add-recipe-form"> <!-- {{ url_for('insert_recipe') }} -->
+        <form action="{{ url_for('change_recipe', recipe_id=recipe._id) }}" method="POST" class="col s10 offset-s1 l8 offset-l2 add-recipe-form"> <!-- {{ url_for('insert_recipe') }} -->
             <div class="row">
-
-                <h5>Add recipe</h5>
+                <h5>Edit recipe</h5>
                 <hr style="margin-bottom: 1.5rem;">
 
                 <div class="form-input-smaller">
 
                     <label for="title">Title</label>
-                    <input type="text" id="title" name="title" placeholder="Title">
+                    <input type="text" id="title" name="title" value="{{ recipe.title }}">
 
                     <label for="title">Description</label>
-                    <input type="text" id="description" name="description" placeholder="Description">
+                    <input type="text" id="description" name="description" value="{{ recipe.decription }}">
 
                     <label for="image">Image</label>
-                    <input type="text" id="image" name="image" placeholder="Image">
+                    <input type="text" id="image" name="image" value="{{ recipe.image }}">
 
                     <label for="textarea1">Method</label>
-                    <textarea id="method" name="method" class="materialize-textarea" placeholder="Method"></textarea>
+                    <textarea id="method" name="method" class="materialize-textarea"> {{ recipe.method }} </textarea>
 
-                    <div class="ingredient_container">
-                        <label for="title">Main Ingredients</label>
-                        <input type="text" id="ingredient" name="ingredient" placeholder="Main Ingredient">
-
-                        <div class="input_fields_wrap">
-                            <a class="add_field_button btn waves-effect waves-light btn-small"><i class="fa fa-plus"></i></a>
-                        </div>
-
+                    {% for ingredient in recipe.ingredients %}
+                    <div>
+                        <input id="recipe_ingredient" name="ingredient" type="text" value="{{ingredient}}"/>
+                        <a class="remove_field">
+                            <i class="fa fa-times-circle fa-2x"varia-hidden="true"></i>
+                        </a>
                     </div>
+                    {% endfor %}
                     
 
                     <div class="input-field col s12">
@@ -42,24 +40,25 @@
                                 <option value="{{meal.meal}}">{{meal.meal}}</option>
                                 {% endfor %}
                             </select>
+                            <small class="danger">Attention</small>
                         </div>
 
                         <div class="col s6 l3">
                             <label for="serves">Serves</label>
-                            <input type="number" id="serves" name="serves">
+                            <input type="number" id="serves" name="serves" value="{{ recipe.serves }}">
                         </div>
                         <div class="col s6 l3">
                             <label for="serves">Cooking time</label>
-                            <input type="number" id="cooking_time" name="cooking_time">
+                            <input type="number" id="cooking_time" name="cooking_time" value="{{ recipe.cooking_time }}">
                         </div>
                         <div class="col s6 l3">
                             <label for="serves">Prep time</label>
-                            <input type="number" id="prep_time" name="prep_time">
+                            <input type="number" id="prep_time" name="prep_time" value="{{ recipe.prep_time }}">
                         </div>
                     </div>
 
                     <div class="form_buttons center-align">
-                        <button class="btn waves-effect waves-light hvr-icon-up" type="submit" name="">Submit
+                        <button class="btn waves-effect waves-light hvr-icon-up" type="submit" name="">Change
                             <i class="fa fa-paper-plane-o hvr-icon"></i>
                         </button>
                         <a href="{{url_for('home')}}" class="btn waves-effect waves-light red" style="color:white;">Cancel
@@ -70,9 +69,10 @@
                 </div>
 
             </div>
+
+            </div>
         </form>
     </div>
-</div>
 </div>
 
 {% endblock %}
